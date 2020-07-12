@@ -6,11 +6,16 @@ window.addEventListener('scroll', (e) => setTop(), {
 });
 
 function setTop() {
-  let array = document.getElementsByClassName('logo');
-  array[0].style.top =
-    50 - array[0].parentElement.getBoundingClientRect().top + 'px';
-  array[1].style.top =
-    50 - array[1].parentElement.getBoundingClientRect().top + 'px';
-  array[2].style.top =
-    50 - array[2].parentElement.getBoundingClientRect().top + 'px';
+  let firstTop =
+    50 -
+    document.getElementsByClassName('screen-black')[0].getBoundingClientRect()
+      .top +
+    'px';
+  document.getElementsByClassName('logo-white')[0].style.top = firstTop;
+
+  document.getElementsByClassName('logo-black')[0].style.top =
+    'calc(' + firstTop + ' - 100vh)';
+
+  document.getElementsByClassName('logo-for-blue')[0].style.top =
+    'calc(' + firstTop + ' - 200vh)';
 }
